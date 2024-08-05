@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://clfftnp12xehj"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_ipytf"]
+[ext_resource type="Texture2D" uid="uid://8kyf5cx7nhqs" path="res://assets/sprites/knight.png" id="2_sgfe8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tjgmd"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5uri"]
+atlas = ExtResource("2_sgfe8")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vickt"]
+atlas = ExtResource("2_sgfe8")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djp15"]
+atlas = ExtResource("2_sgfe8")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nimu8"]
+atlas = ExtResource("2_sgfe8")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn4cv"]
+atlas = ExtResource("2_sgfe8")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cu1a"]
+atlas = ExtResource("2_sgfe8")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlurg"]
+atlas = ExtResource("2_sgfe8")
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dhaw"]
+atlas = ExtResource("2_sgfe8")
+region = Rect2(224, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n2mvu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5uri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vickt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djp15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nimu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn4cv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cu1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlurg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dhaw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 5
+collision_layer = 2
+script = ExtResource("1_ipytf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("CapsuleShape2D_tjgmd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n2mvu")
+frame_progress = 0.690766
